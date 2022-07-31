@@ -1,0 +1,38 @@
+<section class="loginPage">
+    <a class="imgBx" routerLink="">
+        <img src="..\assets\images\logo.png" alt="Logo The Way Center">
+    </a>
+    
+    <div class="contextBx">
+        <div  class="formBx">
+        <h2 class="title">{{isLogin}}</h2>
+        <form [formGroup]="loginForm">
+            <div  class="text_field">
+                <input type="email" name="email"  required formControlName="email">
+                <span></span>
+                <label>E-mail</label>
+            </div>
+            <div class="text_field">
+                <input type="password" name="password" required formControlName="password">
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="submit" value={{btnAction}}>
+            <div class="signup_link">
+                {{profileExist}} 
+                 <a (click)="onSignUp()">{{action}}</a>
+            </div>
+        </form>
+    </div>
+        <h3>Ou {{actionDescrip}} avec les réseaux sociaux</h3>
+        <ul class="social-media">
+            <li><img src="..\assets\images\facebook.png" alt=""></li>
+            <li><img src="..\assets\images\instagram.png" alt=""></li>
+            <li><img src="..\assets\images\linkedin.png" alt=""></li>
+            <li><img src="..\assets\images\twitter.png" alt=""></li>
+        </ul>
+
+
+    </div>
+    
+</section>

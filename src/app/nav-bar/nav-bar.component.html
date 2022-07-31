@@ -1,0 +1,54 @@
+ <!--START NAV-->
+ <nav id="navbar" class="nav">
+    <img class="logo" src="../assets/images/logo.png" alt="">
+
+    <ul class="nav-list">
+        <li>
+            <a routerLink="">Accueil</a>
+        </li>
+        <li>
+            <a routerLink="/modeles">Modèles</a>
+        </li>
+        <li>
+            <a routerLink="/conseils">Conseils</a>
+        </li>
+    </ul>
+    <div class="navBtn">
+        <a routerLink="/connexion" class=""><div class="btn loginBtn">Se connecter</div></a>
+        <a routerLink="/tableauDeBord" class=""><div class="btn tableauBord">Tableau de bord</div></a>
+    </div>
+
+    <a href="#" class="toggle-button"(click)="viewResponsiveNav()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+
+    </a>
+
+</nav>
+<!--END NAV-->
+
+<!--responsivr-nav-->
+
+<div class="responsive-nav" [style]="respnsiveNav">
+    <div class="close-div"><a href="#" (click)="closeResponsiveNav()"><img src="..\assets\images\close.png" alt="Logo fermeture"></a></div>
+    <div class="div-flex">
+    <ul class="nav-list-responsive">
+        <li>
+            <a href="">Accueil</a>
+        </li>
+        <li>
+            <a href="/modeles">Modèles</a>
+        </li>
+        <li>
+            <a href="/conseils">Conseils</a>
+        </li>
+    </ul>
+
+    <div class="navBtn-responsive">
+        <a href="/connexion" class=""><div class="btn-responsive">Se connecter</div></a>
+        <a href="/tableauDeBord" class=""><div class="btn-responsive">Tableau de bord</div></a>
+    </div>
+</div>
+</div>
+

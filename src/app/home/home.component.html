@@ -1,0 +1,70 @@
+
+<app-nav-bar></app-nav-bar> 
+
+<main id="container">
+    <section class="header-section">
+        <div class="header">
+        <h1 class="title">Créez votre CV professionnel en ligne gratuitement</h1>
+        <p class="titleDescription">Remplissez vos coordonnées, choisissez un modèle puis téléchargez-le en PDF</p> 
+        <a routerLink="/formulaire" class="btn createCVBtn">Créez Votre CV</a>
+    </div>
+    </section>
+    <section class="cvModels">
+        <!-- <button class="prev-cv-exmpl cv-exmpl-btn" appPrev><</button>
+     <div class="slider-main">
+        <img class="cv-exmpl" src="..\assets\images\CV-exemple1.png" alt="cv-exemple">
+        <img class="cv-exmpl" src="..\assets\images\CV-exemple2.png" alt="cv-exemple">
+        <img class="cv-exmpl" src="..\assets\images\CV-exemple3.png" alt="cv-exemple">
+        <img class="cv-exmpl" src="..\assets\images\CV-exemple5.png" alt="cv-exemple">
+     </div>
+     <button class="next-cv-exmpl cv-exmpl-btn" appNext>></button> -->
+      <div class="cv-exmpl-one cv-exemple"><img class="cv-exmpl-one-img cv-exemple-img" src="..\assets\images\cvTemplate3.png" alt=""></div>
+      <div class="cv-exmpl-two cv-exemple"><img class="cv-exmpl-two-img cv-exemple-img" src="..\assets\images\cvTemplate1.png" alt=""></div>
+
+    </section>
+    <section class="cvSteps">
+        <h2>
+            Comment ça fonctionne-t-il ? 
+        </h2>
+        <p>Les 3 étapes à suivre pour créer votre CV moderne et professionnel </p>
+        <div class="cvStepsGrid">
+            <div class="cvStep">
+                <div class="stepText">
+                    <h1 class="step-number">1</h1>
+                    <h3>Compléter vos coordonnées</h3>
+                    <p class="stepDescription">Commencez par saisir vos coordonnées pour construire le contenu de votre CV.</p>
+
+                </div>
+            </div>
+            <div class="cvStep">
+                <div class="stepText">
+                    <h1 class="step-number">2</h1>
+                    <h3>Choisissez un modèle</h3>
+                    <p class="stepDescription">Continuez en choisissant votre modèle préféré et personnalisez votre CV pour qu’il reflète votre personnalité.</p>
+
+                </div>
+
+            </div>
+            <div class="cvStep">
+                <div class="stepText">
+                    <h1 class="step-number">3</h1>
+                    <h3>Téléchargez votre CV</h3>
+                    <p class="stepDescription">Téléchargez votre CV et vous pouvez le modifier à tout moment.</p>
+
+                </div>
+            </div>
+
+        </div>
+        <img src="..\assets\images\fonctionnalite-capture.png" alt="capture des fonctionnalités" class="stepsImg">
+
+    </section>
+    <section class="createCandidature">
+    <div class="candidaturetext">
+        <h2>Impressionnez avec votre candidature</h2>
+        <p>Créez et téléchargez facilement un CV moderne et professionnel</p>
+        <a routerLink="/formulaire" class="btn createCVBtn" (click)="goToFormulaire()">Créez Votre CV</a>
+    </div>
+    </section>
+
+</main>
+<app-footer></app-footer>

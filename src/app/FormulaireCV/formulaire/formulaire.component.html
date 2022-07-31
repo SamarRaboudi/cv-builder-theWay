@@ -1,0 +1,38 @@
+<app-nav-cv [value]="title"></app-nav-cv>
+
+<app-personal-info #personalInfo [hidden]="personalInfo && !isStep1Enabled" [isStep1Enabled]="isStep1Enabled"></app-personal-info>
+<app-formation [hidden]="!isStep2Enabled"></app-formation>
+<app-skills [hidden]="!isStep3Enabled"></app-skills>
+<section  class="modelels" *ngIf="isStep4Enabled">
+    <h2 class="info-title">Modèles</h2>
+    <div class="modele-grid">
+        <a (click)="onClickModele1()" class="modele modele-tile">
+            <img src="..\assets\images\cvTemplate1.png" class="modele-image" alt="modele" [ngClass]="{'onClicModeleStyle' : showModele1}">
+            <p class="modele-title"  [ngClass]="{'onClicTitleStyle': showModele1}">Professionnel</p>
+
+            
+        </a>
+        <a (click)="onClickModele2()"  class="modele modele-tile">
+            <img src="..\assets\images\cvTemplate2.png" class="modele-image" alt="modele"  [ngClass]="{'onClicModeleStyle' : showModele2}">
+            <p class="modele-title"  [ngClass]="{'onClicTitleStyle': showModele2}">Moderne</p>
+
+           
+        </a>
+        <a (click)="onClickModele3()"  class="modele modele-tile">
+            <img src="..\assets\images\cvTemplate3.png" class="modele-image" alt="modele" [ngClass]="{'onClicModeleStyle' : showModele3}">
+            <p class="modele-title" [ngClass]="{'onClicTitleStyle': showModele3}">Élégant</p>
+
+           
+        </a>
+    </div>
+
+</section>
+<app-template-cv-one  [data]="data" *ngIf="cvModele1"></app-template-cv-one>
+<app-template-cv-two  [data]="data" *ngIf="cvModele2"></app-template-cv-two>
+<app-template-cv-three  [data]="data" *ngIf="cvModele3"></app-template-cv-three>
+<!-- <app-template-cv-one [data]={his.personalInfo?.personalInfoForm.value}></app-template-cv-one> -->
+
+<div *ngIf="!cvModele1 && !cvModele2 && !cvModele3" class="form-footer">
+    <button class="contine-btn" (click)="onContinue()"  >Continuer</button>
+   <!--  [disabled]="personalInfo.personalInfoForm.invalid" -->
+    </div>

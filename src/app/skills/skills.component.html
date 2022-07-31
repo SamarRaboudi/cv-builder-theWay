@@ -1,0 +1,141 @@
+<app-nav-cv></app-nav-cv>
+<section class="skills-container">
+
+  <!-- certificat form  -->
+
+<div class="certificat-div">
+  <h2 class="info-title">Certificats</h2>
+  
+  <form [formGroup]="certificatForm" class="certificat-form">
+    <div formArrayName ="certificats"   *ngFor="let certificat of certificatArray.controls; let i=index;" >
+      <div class="form"  [formGroupName]="i">
+    <div id="form-div">
+        <label id="certificat-label">Certificat</label>
+        <input type="text" id="certificat" name="certificat" formControlName="certificat">
+    </div>
+    <div id="form-div">
+      <div class="label-flex">
+      <label id="periode-label">Période</label>
+      <label><input class="inline" type="checkbox" name="present" value="present" formControlName="present" (change)="onPresentChange($event, i)">Présent </label>
+    </div>
+      <div class="periode-certificat form-grid">
+        <select id="dropdown" name="periode-certificat-mois" formControlName="dateCertificatMois" >
+          <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+      </select>
+      <select id="dropdown" name="periode-certificat-annee" formControlName="dateCertificatAnnee">
+        <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+    </select>
+    </div>
+</div>
+<div class="finish-form">
+  <button class="delete" (click)="deleteCertificat(i)"><img src="..\assets\images\trash.png" alt=""></button>
+ <!--  <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+</div>
+</div>
+</div>
+    </form>
+    <div class= "add-form-div">
+      <button class="add-form" (click)="addCertificat()" >+ Ajouter un certificat</button>
+      </div>
+  </div>
+
+     <!-- languages form -->
+    
+     <div class="langue-div">
+      <h2 class="info-title">Langues</h2>
+  
+      <form [formGroup]="langueForm" class="langue-form">
+        <div formArrayName ="langues"   *ngFor="let langue of langueArray.controls; let i=index;" >
+          <div class="form"  [formGroupName]="i">
+            <div id="form-div">
+                <label id="langues-label">Langue</label>
+                <input type="text" id="langue" name="langue" formControlName="langue">
+              </div>
+          
+              <div id="form-div">
+                  <label id="niveau-label">Niveau</label>
+                  <div class="levels-grid">
+                  <label><input type="radio" name="niveauLangue" value="Débutant" class="inline" formControlName="niveauLangue">Débutant </label>
+                  <label><input type="radio" name="niveauLangue" value="Intermédaire" class="inline" formControlName="niveauLangue">Intermédaire </label>
+                  <label><input type="radio" name="niveauLangue" value="Bien" class="inline" formControlName="niveauLangue">Bien </label>
+                  <label><input type="radio" name="niveauLangue" value="Très Bien" class="inline" formControlName="niveauLangue">Très Bien </label>
+                  <label><input type="radio" name="niveauLangue" value="Courante" class="inline" formControlName="niveauLangue">Courant(e) </label>
+                </div>
+            </div>
+        <div class="finish-form">
+          <button class="delete" (click)="deleteLangue(i)"><img src="..\assets\images\trash.png" alt=""></button>
+          <!-- <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+        </div>
+        </div>
+        </div>
+        </form>
+        <div class= "add-form-div" >
+        <button class="add-form" (click)="addLangue()" >+ Ajouter une langue</button>
+        </div>
+      </div>
+
+
+      <!-- compétence form -->
+
+    <div class="competence-div">
+    <h2 class="info-title">Compétences</h2>
+
+    <form [formGroup]="competenceForm" class="competence-form">
+      <div formArrayName ="competences"   *ngFor="let competence of competenceArray.controls; let i=index;" >
+        <div class="form"  [formGroupName]="i">
+          <div id="form-div">
+              <label id="competence-label">Compétence</label>
+              <input type="text" id="competence" name="competence" formControlName="competence">
+            </div>
+           
+             
+      <div class="finish-form">
+        <button class="delete" (click)="deleteCompetence(i)"><img src="..\assets\images\trash.png" alt=""></button>
+   <!--      <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+      </div>
+      </div>
+      </div>
+      </form>
+      <div class= "add-form-div">
+      <button class="add-form" (click)="addCompetence()">+ Ajouter une compétence</button>
+      </div>
+    </div>
+
+    
+   
+
+         <!-- intrests form -->
+      
+      <div class="interet-div">
+        <h2 class="info-title">Centres d'intérêt</h2>
+    
+      
+        <form [formGroup]="interetForm" class="interet-form">
+          <div formArrayName ="interets"   *ngFor="let interet of interetArray.controls; let i=index;" >
+            <div class="form"  [formGroupName]="i">
+              <div id="form-div">
+                  <label id="interet-label">Intérêt</label>
+                  <input type="text" id="interet" name="interet" formControlName="interet">
+                </div>
+               
+                 
+          <div class="finish-form">
+            <button class="delete" (click)="deleteInteret(i)"><img src="..\assets\images\trash.png" alt=""></button>
+           <!--  <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+          </div>
+          </div>
+          </div>
+          </form>
+          <div class= "add-form-div">
+          <button class="add-form" (click)="addInteret()">+ Ajouter un centre d'intérêt</button>
+          </div>
+        </div>
+      <!--   <div class="form-footer">
+          <a href="#" class="contine-btn">Continuer</a>
+          </div> -->
+     
+      </section>
+    
+      
+      
+  

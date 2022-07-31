@@ -1,0 +1,11 @@
+<header class="cvNav">
+    <a href=""><img src="..\assets\images\logo.png" alt="Logo" class="logo"></a>
+    <div class="cv-titre-flex">
+      <form [formGroup]="cvTitleForm">
+      <input type="text" name="cv-titre" id="cv-titre" placeholder="CV sans titre" formControlName="titleCV" [value]="title">
+      <!-- <img src="..\assets\images\verifier.png" alt="Check logo" class="check-logo"> -->
+    </form>
+    </div>
+    <a href="tableauDeBord" class="tableauBord-link"><div class="btn tableauBord">Tableau de bord</div></a>
+    <a href="tableauDeBord" class="tableauBord-link-icon"><img src="..\assets\images\dashboard-blue.png" alt="Logo du tableau de bord"></a>
+    </header>

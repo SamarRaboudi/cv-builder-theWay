@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    /*line-height: 1.4;*/
+    color: rgb(28, 27, 27);
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+ h2{
+    font-size: 2.7rem;
+    font-weight: 700;
+    font-family: 'Merienda';
+
+}
+p{
+    font-size : 1.3rem;
+    line-height: 1.75rem;  
+}
+.header{
+    text-align: center;
+    padding : 10rem 2rem 6rem;
+    max-width: 1000px;
+    margin : 0 auto 0 auto;
+}
+.header-section{
+    background-color: #f7f7ff;
+}
+
+ .title{
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: italic;
+    font-family: 'Merienda';
+} 
+.titleDescription{
+font-size : 1.3rem;
+line-height: 1.75rem;
+letter-spacing: .025em;
+color: gray;
+font-family: 'Segoe UI';
+margin: 20px 0 40px;
+padding: 1rem 0;
+}
+.btn{
+    display: inline-block;
+    padding: 1.1rem;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+.createCVBtn{
+    font-size: 1.25rem;
+    background: var(--theWayBlue);
+    transition: background 0.3s ease-out;
+    color: white;
+}
+.createCVBtn:hover{
+    background:var(--theWayLightBlue);
+    
+}
+.cvSteps{
+    margin : 0 auto ;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:4rem 4rem 7rem;
+
+}
+
+.cvSteps > p{
+font-size : 1.2rem;
+line-height: 1.75rem;
+letter-spacing: .025em;
+color: gray;
+font-family: 'Segoe UI';
+margin: 10px 0 20px;
+
+}
+.cvStepsGrid{
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.cvStep{
+    padding: 0;
+}
+.step-number{
+    background-color:var(--theWayBlue);
+    width: 20%;
+    border-radius:0 50%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.4;
+
+}
+.stepText{
+    text-align: left;
+    width: 400px;
+    padding: 2rem 3rem;
+    
+}
+.stepText > h3{
+    font-size: 1.4rem;
+    padding-top: 1rem;
+    color: var(--theWayBlue);
+    font-weight: bolder;
+}
+.stepText > p{
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+/*.textLeft{
+    padding:0 2.5rem 0 0  ;
+}
+.textRight{
+    padding:0  0 0 2.5rem  ;
+}*/
+.stepDescription{
+    font-size: 1.25rem;
+
+}
+.stepsImg{
+    width: 60%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+    0 2px 2px rgba(0,0,0,0.11), 
+    0 4px 4px rgba(0,0,0,0.11), 
+    0 6px 8px rgba(0,0,0,0.11),
+    0 8px 16px rgba(0,0,0,0.11);
+    border-radius: 5px;
+}
+.createCandidature{
+    padding: 1rem 6rem 8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.candidaturetext{
+    width: 100%;
+}
+.candidaturetext>p{
+    font-size : 1.2rem;
+line-height: 1.75rem;
+letter-spacing: .025em;
+color: gray;
+font-family: 'Segoe UI';
+margin: 10px 0 20px;
+padding-bottom: 1rem;
+    }
+
+.cvModels{
+    padding: 2rem 7rem 9rem;
+    margin: 0 auto;
+    background-color: #f7f7ff;
+    display: flex;
+    justify-content: space-around;
+    align-items:initial;
+
+}
+.cv-exemple{
+width: 40%;
+height: auto;
+
+}
+.cv-exmpl-one{
+    transform: rotate(-4deg);
+}
+.cv-exmpl-two{
+    transform: rotate(7deg);
+}
+.cv-exemple-img{
+width: 100%;
+object-fit: cover;
+box-shadow: 0 1px 1px rgba(70, 70, 70, 0.11), 
+0 1px 1px rgba(70, 70, 70, 0.11), 
+0 2px 2px rgba(0,0,0,0.11), 
+0 3px 4px rgba(0,0,0,0.11),
+0 4px 8px rgba(0,0,0,0.11);
+border-radius: 5px;
+}
+
+/*.cvModels{
+    position: relative;
+    padding: 2rem 3rem 9rem;
+    background-color: #f7f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.slider-main{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+}
+.cv-exmpl{
+    width: 30%;
+    padding: 0 1rem;
+  
+}
+.cv-exmpl-btn{
+    padding:  0 0.6rem;
+    font-size: 2.1rem;
+    background-color: transparent;
+    color: rgb(28, 27, 27);
+    border: none;
+    cursor: pointer;
+    border: 0.5px solid transparent;
+    border-radius: 50px;
+    text-align: center;
+}
+.cv-exmpl-btn:hover{
+    border: 0.2px solid rgb(113, 112, 112);
+    border-radius: 50px;
+
+}
+.prev-cv-exmpl{
+    margin-right: 1rem;
+}
+.next-cv-exmpl{
+    margin-left: 1rem;
+}*/
+
+
+
+
+
+@media screen and (max-width : 700px) {
+    .title{
+        font-size: 3rem;
+    
+    }
+    .titleDescription{
+        font-size: 1.5rem;
+    }
+    h1,h2{
+        font-size: 2rem;
+
+    }
+    .createCandidature{
+        flex-direction: column;
+    }
+    .candidatureImg,.candidaturetext {
+        width: 100%;
+    }
+    .cvStep{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cvStep > img{
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .textLeft, .textRight{
+        padding:0 ;
+    }
+    .stepText>h1, .stepText>h3{
+        text-align: center;}
+        .cv-exmpl{
+            width: 90%;
+          
+        }
+    .cvModels{
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        }
+    .cv-exemple{
+        width: 50%;
+
+        }
+    .stepsImg{
+            width: 90%;
+        }
+
+    
+
+    
+    
+}
+@media screen and (max-width : 1000px){
+    .cvStepsGrid{
+    
+        justify-content: baseline;
+        align-items: baseline;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: left;
+       
+
+    }
+    .stepText{
+        width: 80%;
+        padding: 2rem 0;
+        text-align: left;
+        margin: 0 auto;}
+        .cv-exmpl{
+            width: 40%;
+          
+        }
+    .stepsImg{
+        width: 80%;
+    }
+
+
+    
+
+}
+@media screen and (max-width : 950px){
+   
+
+}
+

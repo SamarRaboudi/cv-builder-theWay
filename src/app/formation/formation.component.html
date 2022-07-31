@@ -1,0 +1,202 @@
+<app-nav-cv ></app-nav-cv>
+<section class="formation-container">
+  <!-- Formation form --> 
+  <div class="formation-div">
+    <h2 class="info-title">Formations</h2>
+  <form [formGroup]="formationForm" class="formation-form">
+    <div formArrayName ="formations"   *ngFor="let form of formationArray.controls; let i=index;" >
+      <div class="form"  [formGroupName]="i">
+        <div class="form-grid">
+    <div id="form-div">
+        <label id="formation-label">Formation</label>
+        <input type="text" id="formation" name="formation" formControlName="formationName">
+      </div>
+        <div id="form-div">
+            <label id="etablissement-label">Établissement</label>
+            <input type="text" id="etablissement" name="etablissement" formControlName="etablissement">
+          </div>
+
+        </div>
+        <div class="form-grid">
+            <div id="form-div">
+                <label id="date-debut-label">Date de début</label>
+                <div class="date-debut-activite form-grid-min">
+                  <select id="dropdown" name="activite-date-debut-mois" formControlName="dateDebutMois">
+                    <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+                </select>
+                <select id="dropdown" name="formation-date-debut-annee" formControlName="dateDebutAnnee">
+                  <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+              </select>
+              </div>
+
+        </div>
+        <div id="form-div">
+          <div class="label-flex">
+          <label id="date-debut-label">Date de fin</label>
+          <label><input class="inline" type="checkbox" name="present" value="present" formControlName="present" (change)="onPresentChangeFormation($event, i)">Présent </label>
+        </div>
+          <div class="date-debut-formation form-grid-min">
+            <select id="dropdown" name="formation-date-fin-mois"  formControlName="dateFinMois" >
+              <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+          </select>
+          <select id="dropdown" name="formation-date-fin-annee" formControlName="dateFinAnnee">
+            <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+        </select>
+        </div>
+
+  </div>
+</div>
+<div id="form-div">
+  <label id="description-label">Description</label>
+  <textarea   name="description" formControlName="description"></textarea>
+</div>
+<div class="finish-form">
+  <button class="delete" (click)="deleteFormation(i)"><img src="..\assets\images\trash.png" alt=""></button>
+ <!--  <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+</div>
+</div>
+</div>
+
+<div class= "add-form-div">
+  <button class="add-form" (click)="addFormation()" >+ Ajouter une formation</button>
+  </div>
+</form>
+</div>
+
+
+
+<!-- experience form --> 
+<div class="formation-div">
+  <h2 class="info-title">Expériences professionnelles</h2>
+<form [formGroup]="experienceForm" class="experience-form">
+  <div formArrayName ="experiences"   *ngFor="let experience of experienceArray.controls; let i=index;" >
+    <div class="form"  [formGroupName]="i">
+
+    <div class="form-grid">
+      <div id="form-div">
+        <label id="formation-label">Poste</label>
+        <input type="text" id="poste" name="poste" formControlName="poste">
+      </div>
+      <div id="form-div">
+          <label id="employeur-label">Employeur</label>
+          <input type="text" id="employeur" name="employeur" formControlName="employeur">
+        </div>
+
+      </div>
+      <div class="form-grid">
+          <div id="form-div">
+              <label id="date-debut-label">Date de début</label>
+              <div class="date-debut-activite form-grid-min">
+                <select id="dropdown" name="activite-date-debut-mois" formControlName="dateDebutMois">
+                  <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+              </select>
+              <select id="dropdown" name="formation-date-debut-annee" formControlName="dateDebutAnnee">
+                <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+            </select>
+            </div>
+
+      </div>
+      <div id="form-div">
+        <div class="label-flex">
+        <label id="date-debut-label">Date de fin</label>
+        <label><input class="inline" type="checkbox" name="present" value="present" formControlName="present" (change)="onPresentChangeExperience($event, i)">Présent </label>
+      </div>
+        <div class="date-debut-formation form-grid-min">
+          <select id="dropdown" name="formation-date-fin-mois"  formControlName="dateFinMois">
+            <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+        </select>
+        <select id="dropdown" name="formation-date-fin-annee" formControlName="dateFinAnnee">
+          <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+      </select>
+      </div>
+
+</div>
+</div>
+<div id="form-div">
+  <label id="description-label">Description</label>
+  <textarea   name="description" formControlName="description"></textarea>
+</div>
+<div class="finish-form">
+<button class="delete" (click)="deleteExperience(i)"><img src="..\assets\images\trash.png" alt=""></button>
+<!-- <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+</div>
+</div>
+</div>
+
+<div class= "add-form-div">
+<button class="add-form" (click)="addExperience()" >+ Ajouter une expérience professionnelle</button>
+</div>
+</form>
+</div>
+
+<!-- activity form --> 
+<div class="formation-div">
+  <h2 class="info-title">Activités extra-professionnelles</h2>
+<form [formGroup]="activiteForm" class="activite-form">
+  <div formArrayName ="activites"   *ngFor="let activite of activiteArray.controls; let i=index;" >
+    <div class="form"  [formGroupName]="i">
+ 
+    
+      <div class="form-grid">
+        <div id="form-div">
+          <label id="poste-label">Poste</label>
+          <input type="text" id="poste" name="poste" formControlName="poste" >
+        </div>
+        <div id="form-div">
+            <label id="employeur-label">Employeur</label>
+            <input type="text" id="employeur" name="employeur" formControlName="employeur" >
+          </div>
+
+        </div>
+        <div class="form-grid">
+            <div id="form-div">
+                <label id="date-debut-label">Date de début</label>
+                <div class="date-debut-activite form-grid-min">
+                  <select id="dropdown" name="activite-date-debut-mois" formControlName="dateDebutMois">
+                    <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+                </select>
+                <select id="dropdown" name="formation-date-debut-annee" formControlName="dateDebutAnnee">
+                  <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+              </select>
+              </div>
+  
+        </div>
+        <div id="form-div">
+          <div class="label-flex">
+          <label id="date-debut-label">Date de fin</label>
+          <label><input class="inline" type="checkbox" name="present" value="present" formControlName="present" (change)="onPresentChangeActivite($event,i)">Présent </label>
+        </div>
+          <div class="date-debut-formation form-grid-min">
+            <select id="dropdown" name="formation-date-fin-mois" formControlName="dateFinMois" >
+              <option *ngFor="let mois of moisArray" value="{{mois}}">{{mois}}</option>
+          </select>
+          <select id="dropdown" name="formation-date-fin-annee" formControlName="dateFinAnnee">
+            <option *ngFor="let annee of anneeArray" value="{{annee}}">{{annee}}</option>
+        </select>
+        </div>
+  
+  </div>
+  </div>
+  <div id="form-div">
+    <label id="description-label">Description</label>
+    <textarea   name="description" formControlName="description"></textarea>
+  </div>
+  <div class="finish-form">
+  <button class="delete" (click)="deleteActivite(i)"><img src="..\assets\images\trash.png" alt=""></button>
+ <!--  <button class="finsh"><img src="..\assets\images\verifier.png">Terminé</button> -->
+  </div>
+</div>
+</div>
+
+<div class= "add-form-div">
+<button class="add-form" (click)="addActivite()" >+ Ajouter une activité extra-professionnelle</button>
+</div>
+</form>
+</div>
+
+
+</section>
+
+
+    
+

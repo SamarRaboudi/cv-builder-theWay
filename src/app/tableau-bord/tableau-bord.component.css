@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Fira+Sans+Condensed:wght@500;600&family=Merienda:wght@700&family=Poppins:wght@200&display=swap');
+a{
+    text-decoration: none;
+    color: #979797;
+}
+
+.menu{
+    background-color:rgb(28, 27, 27);
+    padding: 1.5rem 15px;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    color: white;
+    font-family: 'Fira Sans Condensed';
+}
+.logo{
+    width:100px;
+}
+.menu-list{
+    padding:1.5rem 0.1rem ;
+}
+.menu-item{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding:15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.menu-item:hover{
+background-color: #272727;
+}
+.menu-item> img{
+    margin-right: 15px;
+    width: 20px;
+}
+.main-section{
+  padding: 1.5rem;
+  padding-left:17rem ;
+  font-family: sans-serif;
+  color: #272727;
+}
+.title{
+    font-family:'Fira Sans Condensed';
+    font-size: 1.4rem;
+}

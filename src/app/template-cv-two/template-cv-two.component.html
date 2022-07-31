@@ -1,0 +1,153 @@
+<div class="body">
+    <!-- (click)="openPDF()" -->
+    <div class="container" id="cv">
+      <img *ngIf="viewLogo" src="..\assets\images\logo.png" class="logo">
+   <div class="header">
+    <div class="imgBx" *ngIf="imgLink">
+        <img src="{{imgLink}}" alt="" class="photoProfil">
+    </div>
+    <div class="header-right">
+    <div class="profile-text">
+        <h2>{{prenom}} {{nom}}</h2>
+        <h4>{{profil}}</h4>
+    </div>
+    <div class="contact-info" *ngIf="dateNaissance || telephone || adresse || codePostal || ville || email || linkedin">
+        <ul>
+            <li *ngIf="email">
+                <img class="icon" src="..\assets\images\email-white.png" alt="" >
+                 <span class="text">{{email}}</span>
+             </li>
+             <li *ngIf="telephone">
+                <img class="icon" src="..\assets\images\appel.png" alt="" >
+                  <span class="text">{{telephone}}</span>
+              </li>
+              <li *ngIf="adresse || codePostal || ville">
+                <img class="icon" src="..\assets\images\adress-white.png" alt="" >
+                <div class="adress">
+                  <span class="text adress">{{adresse}} </span>
+                  <span class="text adress">{{codePostal}} {{ville}}</span>
+                </div>
+              </li>
+            <li *ngIf="dateNaissance">
+              <img class="icon" src="..\assets\images\calendar-white.png" alt="" >
+              <span class="text">{{dateNaissance}}</span>
+            </li>
+            <li *ngIf="linkedin">
+              <img class="icon" src="..\assets\images\linkedin-white.png" alt="" >
+                <span class="text">{{linkedin}}</span>
+            </li>
+     
+        </ul>
+
+    </div>
+    </div>
+   </div>
+   <div class="main">
+    <div class="main-left">
+
+        <div class="about" *ngIf="profilDescription">
+            <h2 class="title">Profil</h2>
+            <p>{{profilDescription}}</p>
+          </div>
+          <div class="about" *ngIf="verifyExperience">
+            <h2 class="title">Expérience professionnelle</h2>
+           
+            <div class="box" *ngFor="let experience of experienceProfessionnelleArray">
+                <div class="text">
+                  <div class="box-title">
+                    <h4>{{experience.poste}}</h4>
+                    <h5>{{experience.dateDebutMois}} {{experience.dateDebutAnnee}} - <span *ngIf="!experience.present">{{experience.dateFinMois}} {{experience.dateFinAnnee}}</span ><span *ngIf="experience.present">Présent</span></h5>
+                  </div>
+                    <h5>{{experience.employeur}}</h5>
+                    <p>{{experience.description}}</p>
+                  </div>
+            </div>
+       
+          </div>
+
+        <div class="about" *ngIf="verifyFormation">
+            <h2 class="title">Formation</h2>
+            <div class="box" *ngFor="let formation of formationArray">
+                <div class="text">
+                  <div class="box-title">
+                    <h4>{{formation.formationName}}</h4>
+                    <h5>{{formation.dateDebutMois}} {{formation.dateDebutAnnee}} - <span>{{formation.dateFinMois}} {{formation.dateFinAnnee}}</span><span *ngIf="formation.present">Présent</span></h5>
+                  </div>
+                    <h5>{{formation.etablissement}}</h5>
+                    <p>{{formation.description}}</p>
+                  </div>
+            </div>
+          </div>
+
+        <div class="about" *ngIf="verifyActivite">
+            <h2 class="title">Activités extra-professionnelles</h2>
+            <div class="box" *ngFor="let activite of extraActiviteArray">
+              <div class="text">
+                <div class="box-title">
+                <h4>{{activite.poste}}</h4>
+                <h5>{{activite.dateDebutMois}} {{activite.dateDebutAnnee}} - <span>{{activite.dateFinMois}} {{activite.dateFinAnnee}}</span> <span  *ngIf="activite.present">Présent</span></h5>
+              </div>
+                <h5>{{activite.employeur}}</h5>
+                <p>{{activite.description}}</p>
+              </div>
+            </div>
+      
+          </div>
+    </div>
+
+
+    <div class="main-right">
+
+        <div class="skill-info" *ngIf="verifyCompetence">
+            <h3 class="title">Compétences</h3>
+          <div class="compétences">
+            <span *ngFor="let competence of competenceArray" class="text">{{competence}}</span>
+          </div>
+        </div>
+
+        <div class="skill-info" *ngIf="verifyLangue">
+            <h3 class="title">Langues</h3>
+            <ul>
+                <li *ngFor="let item of langueArray">
+                  <span class="text">{{item.langue}}</span>
+                  <span class="lang-level"><span *ngIf="item.niveauLangue">(</span>{{item.niveauLangue}}<span *ngIf="item.niveauLangue">)</span></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="skill-info" *ngIf="verifyInteret">
+            <h3 class="title">Centres d'intérêt</h3>
+            <ul>
+                <li *ngFor="let interet of interetArray">
+                  <img class="circle-icon"src="..\assets\images\circle-icon-red.png" alt="" *ngIf="interet">
+                  <span class="text">{{interet}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="skill-info" *ngIf="verifyCertficat">
+            <h3 class="title">Certificats</h3>
+            <div class="box" *ngFor="let certficat of certificatArray">
+              <div class="text">
+                <h4>{{certficat.certificat}}</h4>
+                <p>{{certficat.description}}</p>
+              </div>
+                <div class="year-company">
+                  <h5 *ngIf="!certficat.present">{{certficat.dateCertificatMois}} {{certficat.dateCertificatAnnee}}</h5>
+                  <h5 *ngIf="certficat.present">Présent</h5>
+                </div>
+              </div>
+        </div>
+
+
+    </div>
+   </div>
+
+
+
+    </div>
+  
+  </div>
+  <div class="form-footer">
+    <a class="contine-btn" (click)="openPDF()" >Télécharger</a>
+    </div>

@@ -1,0 +1,152 @@
+<div class="body">
+  <!-- (click)="openPDF()" -->
+  <div class="container" id="cv">
+    <img *ngIf="viewLogo" src="..\assets\images\logo.png" class="logo">
+    <div class="left-side">
+        <div class="profile-text">
+            <div class="imgBx" *ngIf="imgLink">
+                <img src="{{imgLink}}" alt="" class="photoProfil">
+            </div>
+            <h2>{{prenom}} {{nom}}<br><span>{{profil}}</span></h2>
+        </div>
+        <div class="contact-info" *ngIf="dateNaissance || telephone || adresse || codePostal || ville || email || linkedin">
+            <h3 class="title">Données personnelles</h3>
+            <ul>
+                <li *ngIf="dateNaissance">
+                  <img class="icon" src="..\assets\images\calendar-icon.png" alt="" >
+                  <span class="text">{{dateNaissance}}</span>
+                </li>
+                <li *ngIf="telephone">
+                  <img class="icon" src="..\assets\images\phone.png" alt="" >
+                    <span class="text">{{telephone}}</span>
+                </li>
+                <li *ngIf="adresse || codePostal || ville">
+                  <img class="icon" src="..\assets\images\cartes-et-drapeaux.png" alt="" >
+                  <div class="adress">
+                    <span class="text adress">{{adresse}}</span>
+                    <span class="text adress">{{codePostal}} {{ville}}</span>
+                  </div>
+                </li>
+                <li *ngIf="email">
+                   <img class="icon" src="..\assets\images\email.png" alt="" >
+                    <span class="text">{{email}}</span>
+                </li>
+                <li *ngIf="linkedin">
+                  <img class="icon" src="..\assets\images\linkedin-icon.png" alt="" >
+                    <span class="text">{{linkedin}}</span>
+                </li>
+         
+            </ul>
+
+        </div>
+
+        <div class="contact-info" *ngIf="verifyCompetence">
+          <h3 class="title">Compétences</h3>
+        <div class="compétences">
+          <span *ngFor="let competence of competenceArray" class="text">{{competence}}</span>
+        </div>
+  
+      </div>
+        
+
+
+        <div class="contact-info" *ngIf="verifyLangue">
+          <h3 class="title">Langues</h3>
+          <ul>
+              <li *ngFor="let item of langueArray">
+                <span class="text">{{item.langue}}</span>
+                <span class="lang-level"><span *ngIf="item.niveauLangue">(</span>{{item.niveauLangue}}<span *ngIf="item.niveauLangue">)</span></span>
+              </li>
+              
+       
+          </ul>
+
+      </div>
+
+      <div class="contact-info" *ngIf="verifyInteret">
+        <h3 class="title">Centres d'intérêt</h3>
+        <ul>
+            <li *ngFor="let interet of interetArray">
+              <img class="square-icon"src="..\assets\images\square.png" alt="" *ngIf="interet">
+              <span class="text">{{interet}}</span>
+            </li>
+  
+        </ul>
+
+    </div>
+    
+
+    </div>
+    <div class="right-side">
+    <div class="about" *ngIf="profilDescription">
+      <h2 class="title2">Profil</h2>
+      <p>{{profilDescription}}</p>
+    </div>
+    <div class="about" *ngIf="verifyExperience">
+      <h2 class="title2">Expérience professionnelle</h2>
+     
+      <div class="box" *ngFor="let experience of experienceProfessionnelleArray">
+        <div class="year-company">
+          <h5>{{experience.dateDebutMois}} {{experience.dateDebutAnnee}}</h5>
+          <h5>{{experience.dateFinMois}} {{experience.dateFinAnnee}}</h5>
+          <h5 *ngIf="experience.present">Présent</h5>
+        </div>
+        <div class="text">
+          <h4>{{experience.poste}} <span *ngIf="experience.employeur && experience.poste">-</span> {{experience.employeur}}</h4>
+          <p>{{experience.description}}</p>
+        </div>
+      </div>
+ 
+    </div>
+    <div class="about" *ngIf="verifyFormation">
+      <h2 class="title2">Formation</h2>
+      <div class="box" *ngFor="let formation of formationArray">
+        <div class="year-company">
+          <h5>{{formation.dateDebutMois}} {{formation.dateDebutAnnee}}</h5>
+          <h5>{{formation.dateFinMois}} {{formation.dateFinAnnee}}</h5>
+          <h5 *ngIf="formation.present">Présent</h5>
+        </div>
+        <div class="text">
+          <h4>{{formation.formationName}}</h4>
+          <h5>{{formation.etablissement}}</h5>
+          <p>{{formation.description}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="about" *ngIf="verifyActivite">
+      <h2 class="title2">Activités extra-professionnelles</h2>
+      <div class="box" *ngFor="let activite of extraActiviteArray">
+        <div class="year-company">
+          <h5>{{activite.dateDebutMois}} {{activite.dateDebutAnnee}}</h5>
+          <h5>{{activite.dateFinMois}} {{activite.dateFinAnnee}}</h5>
+          <h5 *ngIf="activite.present">Présent</h5>
+        </div>
+        <div class="text">
+          <h4>{{activite.poste}} <span *ngIf="activite.employeur && activite.poste">-</span> {{activite.employeur}}</h4>
+          <p>{{activite.description}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="about" *ngIf="verifyCertficat">
+      <h2 class="title2">Certificats</h2>
+      <div class="box" *ngFor="let certficat of certificatArray">
+        <div class="year-company">
+          <h5 *ngIf="!certficat.present">{{certficat.dateCertificatMois}} {{certficat.dateCertificatAnnee}}</h5>
+          <h5 *ngIf="certficat.present">Présent</h5>
+        </div>
+        <div class="text">
+          <h4>{{certficat.certificat}}</h4>
+          <p>{{certficat.description}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+</div>
+<div class="form-footer">
+  <a class="contine-btn" (click)="openPDF()" >Télécharger</a>
+  </div>

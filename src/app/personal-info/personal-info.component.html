@@ -1,0 +1,96 @@
+<!-- <app-nav-cv [value]="cvName"></app-nav-cv> -->
+<section class="persoanl-info-container">
+  <h2 class="info-title">Informations personnelles</h2>
+<form  class="persoanl-info-form" [formGroup]="personalInfoForm">
+    
+    <div class="form-flex">
+    <div class="form-flex-left" >
+      <div class="wrapper">
+      <div class="image">
+      <img [src]="photoLink" style="display: none" onload="this.style.display=''">
+        </div>
+
+      <div class="content">
+        <img id="profilePhoto" src="..\assets\images\camera.png" >
+      </div>
+    </div>
+      <input id="default-btn" type="file" hidden accept="image/*" #file (change)="onFileChanged($event)">
+      <button id="custom-btn" (click)="file.click()">Choisir Photo</button>
+
+    </div>
+    <div class="form-flex-right">
+      <div class="form-grid">
+
+<!--       <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput type="text"  placeholder="Prénom" formControlName="prenom" required>
+        <mat-error>
+          This field is required
+        </mat-error> 
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom de famille</mat-label>
+        <input matInput type="text"  placeholder="Nom de famille" formControlName="nom" required>
+        <mat-error>
+          This field is required
+        </mat-error> 
+      </mat-form-field> -->
+     
+     <div id="form-div">
+        <label id="prenom-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['prenom'].touched && personalInfoForm.controls['prenom'].hasError('required')}">Prénom*</label>
+        <input type="text" id="prenom" name="prenom" formControlName="prenom" required >
+      </div> 
+    <div id="form-div">
+        <label id="nom-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['nom'].touched && personalInfoForm.controls['nom'].hasError('required')}">Nom de famille*</label>
+        <input type="text" id="nom" name="nom" formControlName="nom" required>
+      </div> 
+    </div>
+      <div id="form-div">
+        <label id="email-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['email'].touched && personalInfoForm.controls['email'].hasError('required') }">Adresse e-mail*</label>
+        <input type="email" id="email" name="email" formControlName="email" required>
+      </div>
+    </div> 
+    </div>
+      <div id="form-div">
+        <label id="profil-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['profil'].touched && personalInfoForm.controls['profil'].hasError('required')}">Titre du profil*</label>
+        <input type="text" id="profil" name="profil" formControlName="profil" required>
+      </div>
+      <div id="form-div">
+        <label id="adress-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['adresse'].touched && personalInfoForm.controls['adresse'].hasError('required')}">Adresse*</label>
+        <input type="text" id="adresse" name="adresse" formControlName="adresse" required>
+      </div>
+      <div class="form-grid">
+      <div id="form-div">
+        <label id="code-postal-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['codePostal'].touched && personalInfoForm.controls['codePostal'].hasError('required')}">Code postal*</label>
+        <input type="text" id="code-postal" name="code-postal" formControlName="codePostal" required>
+      </div>
+      <div id="form-div">
+        <label id="ville-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['ville'].touched && personalInfoForm.controls['ville'].hasError('required')}">Ville*</label>
+        <input type="text" id="ville" name="ville" formControlName="ville" required>
+      </div>
+    </div>
+    <div class="form-grid">
+    <div id="form-div">
+      <label id="telephone-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['telephone'].touched && personalInfoForm.controls['telephone'].hasError('required')}">Numéro de téléphone*</label>
+      <input type="text" id="telephone" name="telephone" formControlName="telephone" required>
+    </div>
+    <div id="form-div">
+        <label id="date-nais-label">Date de naissance</label>
+        <input type="date" id="date-nais" name="date-nais" formControlName="dateNaissance">
+      </div>
+  </div>
+      <div id="form-div">
+        <label id="linkdeIn-label">LinkedIn</label>
+        <input type="text" id="LinkedIn" name="LinkedIn" formControlName="linkedin">
+      </div>
+      <div id="form-div">
+        <label id="description-label" [ngClass]="{'errorStyle' : personalInfoForm.controls['description'].touched && personalInfoForm.controls['description'].hasError('required')}">Description*</label>
+        <textarea id="description" name="description" formControlName="description" required></textarea>
+      </div>
+</form>
+<!-- <div class="formation-footer">
+  <a  class="contine-btn" (click)="onContinue()" >Continuer</a>
+  </div> -->
+</section>
+
+
