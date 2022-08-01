@@ -33,6 +33,6 @@
 <!-- <app-template-cv-one [data]={his.personalInfo?.personalInfoForm.value}></app-template-cv-one> -->
 
 <div *ngIf="!cvModele1 && !cvModele2 && !cvModele3" class="form-footer">
-    <button class="contine-btn" (click)="onContinue()"  >Continuer</button>
+    <button class="contine-btn" (click)="onContinue()" [disabled]="personalInfo.personalInfoForm.invalid"  >Continuer</button>
    <!--  [disabled]="personalInfo.personalInfoForm.invalid" -->
     </div>
