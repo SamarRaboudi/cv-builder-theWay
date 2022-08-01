@@ -41,7 +41,7 @@ export class FormulaireComponent implements OnInit, AfterViewInit{
 
 
   ngOnInit(): void {
-   // window.scroll(0,0);
+   window.scroll(0,0);
   }
 
   onContinue(){
@@ -98,6 +98,8 @@ export class FormulaireComponent implements OnInit, AfterViewInit{
       this.isStep4Enabled = false;
       this.showModele1 = false;
       this.cvModele1 = true;
+      window.scroll(0,0);
+      
 
     }
 
@@ -105,6 +107,7 @@ export class FormulaireComponent implements OnInit, AfterViewInit{
       this.isStep4Enabled = false;
       this.showModele2 = false;
       this.cvModele2 = true;
+      window.scroll(0,0);
 
     }
 
@@ -112,6 +115,7 @@ export class FormulaireComponent implements OnInit, AfterViewInit{
       this.isStep4Enabled = false;
       this.showModele3 = false;
       this.cvModele3 = true;
+      window.scroll(0,0);
 
     }
   }
